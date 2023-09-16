@@ -1,4 +1,4 @@
-# Idenficador
+# Command Counter
 Esse script lê projetos e arquivos em Python (ou em JS, mas com menos precisao) e retorna a quantidade de cada comando usado.
 Os comandos serao filtrados e, caso estejam comentados (#) ou entre aspas ("" ou ''), nao serao contabilizados.
 
