@@ -1,4 +1,3 @@
-#import main
 from pathlib import Path
 from io import TextIOWrapper
 
@@ -31,8 +30,8 @@ def juntar(b,x=False):
             junto += f'\n\t\t{arq}'
     return junto
 
-def criarDic(x=False):
-    if not x:
+def criarDic(total=False):
+    if not total:
         elementos = {'if':0, 'elif':0, 'else':0, 
                     'while':0, 'for':0, 
                     'try':0, 'except':0, 'finally':0,
@@ -60,14 +59,12 @@ def filaNome(nomes:list, projeto, terminacao='.py'):
     for arquivopy in Path(projeto).glob(f'**/*{terminacao}'):              
         nomes.append(arquivopy.name)
     return nomes
-#
-#
+
 def logica(alvos:dict, arquivo:TextIOWrapper):
     aspasSimples = []
     aspasDuplas = []
     for linha in arquivo.readlines():
         for caractere in linha:
-           # print(caractere)
             if caractere == "'":
                 aspasSimples.append(caractere)
             elif caractere == '"':
@@ -81,7 +78,7 @@ def logica(alvos:dict, arquivo:TextIOWrapper):
             if palavra in linha.replace(':','').split() and (len(aspasDuplas) == 0 and len(aspasSimples) == 0):
                 if linha.find('#') == -1:
                     alvos[palavra] += linha.replace(':','').split().count(palavra)
-                elif palavra == '#' and linha.find(palavra) == linha.find('#') and linha.find('#') != -1:
+                elif palavra == '#' and linha.find('#') != -1:
                     alvos[palavra] += linha.replace(':','').split().count(palavra)
                 else:
                     if linha.find(palavra) < linha.find('#'):
