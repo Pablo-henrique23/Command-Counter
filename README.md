@@ -42,7 +42,8 @@ python main.py
     Finally    =        0      
     Def        =        0      
     Return     =        0      
-    Pass       =        0      
+    Pass       =        0
+    Continue   =        0
     From       =        1      
     Import     =        2      
     Class      =        0      
