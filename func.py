@@ -38,7 +38,7 @@ def criarDic(total=False):
                     'def':0, 'return':0,
                     'pass':0, 'continue':0,
                     'from':0, 'import':0,
-                    'class':0, 'as':0,
+                    'class':0, 'as':0, 'lambda':0,
                     'const':0,'#':0}
     else:
         elementos = {'if':0,'elif':0,'else':0,
@@ -47,7 +47,7 @@ def criarDic(total=False):
                     'def':0,'return':0,
                     'pass':0, 'continue':0,
                     'from':0,'import':0,
-                    'class':0,'as':0,
+                    'class':0,'as':0, 'lambda':0,
                     'const':0,'#':0, 
                     'TOTAL':0,'TOTAL - #':0}
     return elementos
