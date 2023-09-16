@@ -12,7 +12,7 @@ git clone https://github.com/zecabum/Command-Counter.git
 ```
 
 ```bash
-cd Identificador
+cd Identificador/
 ```
 
 ```bash
@@ -47,7 +47,8 @@ python main.py
     From       =        1      
     Import     =        2      
     Class      =        0      
-    As         =        0      
+    As         =        0
+    Lambda     =        0
     Const      =        0      
     #          =        4      
     -----------------------------------------------------------------
