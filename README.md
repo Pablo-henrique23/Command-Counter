@@ -1,8 +1,8 @@
 # Command Counter
-Esse script lê projetos e arquivos em Python (ou em JS, mas com menos precisao) e retorna a quantidade de cada comando usado.
-Os comandos serao filtrados e, caso estejam comentados (#) ou entre aspas ("" ou ''), nao serao contabilizados.
+Esse script lê projetos e arquivos em Python (ou em JS, mas com menos precisão) e retorna a quantidade de cada comando usado.
+Os comandos serão filtrados e, caso estejam comentados (#) ou entre aspas ("" ou ''), não serão contabilizados.
 
-## Instalaçao e utilizaçao
+## Instalação e utilização 
 ### Requisitos
 Python3 e [pip](https://pip.pypa.io/en/stable/)
 
