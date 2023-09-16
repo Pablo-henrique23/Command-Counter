@@ -8,7 +8,7 @@ Python3 e [pip](https://pip.pypa.io/en/stable/)
 
 ### Linux 
 ```bash
-git clone https://github.com/zecabum/Idenficador.git
+git clone https://github.com/zecabum/Command-Counter.git
 ```
 
 ```bash
@@ -20,7 +20,7 @@ python3 main.py
 ```
 
 ### Windows
-Baixe os arquivos [aqui](https://github.com/zecabum/Idenficador/archive/refs/heads/main.zip), extraia-os em alguma pasta e execute
+Baixe os arquivos [aqui](https://github.com/zecabum/Command-Counter/archive/refs/heads/main.zip), extraia-os em alguma pasta e execute
 ```bash
 python main.py
 ```
