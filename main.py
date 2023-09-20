@@ -4,6 +4,7 @@ import func
 extensao = input("Selecione a linguagem a ser analisada: Python ou JS (py ou js)\n")
 while extensao != "py" and extensao != "js":
     extensao = input('Digite apenas "py" ou "js": ')
+extensão = f'.{extensao}'
 
 func.linha()
 print(f'Deseja analisar um projeto ou um unico arquivo? \nExemplo:\n"D:\Downloads\python\\bot\\" para um projeto\n"D:\Downloads\python\\bot\\funcoes.py" para um arquivo unico')
