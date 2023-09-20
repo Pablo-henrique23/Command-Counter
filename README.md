@@ -4,7 +4,7 @@ Os comandos serão filtrados e, caso estejam comentados (#) ou entre aspas ("" o
 
 ## Instalação e utilização 
 ### Requisitos
-Python3 e [pip](https://pip.pypa.io/en/stable/)
+Python3
 
 ### Linux 
 ```bash
