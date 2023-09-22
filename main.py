@@ -1,15 +1,18 @@
 from pathlib import Path
 import func
+import os
 
 extensao = input("Selecione a linguagem a ser analisada: Python ou JS (py ou js)\n")
 while extensao != "py" and extensao != "js":
     extensao = input('Digite apenas "py" ou "js": ')
-extensão = f'.{extensao}'
 
 func.linha()
 print(f'Deseja analisar um projeto ou um unico arquivo? \nExemplo:\n"D:\Downloads\python\\bot\\" para um projeto\n"D:\Downloads\python\\bot\\funcoes.py" para um arquivo unico')
 func.linha()
 x = int(input('Digite 1 ou 2 respectivamente. '))
+while x != 1 and x != 2:
+    x = int(input('Digite 1 ou 2 respectivamente. '))
+    
 if x == 1:
     arquivos = []
     nomes = []
