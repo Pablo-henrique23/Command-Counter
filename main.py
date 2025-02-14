@@ -7,7 +7,7 @@ while extensao != "py" and extensao != "js":
     extensao = input('Digite apenas "py" ou "js": ')
 
 func.linha()
-print(f'Deseja analisar um projeto ou um unico arquivo? \nExemplo:\n"D:\Downloads\python\\bot\\" para um projeto\n"D:\Downloads\python\\bot\\funcoes.py" para um arquivo unico')
+print(f'Deseja analisar um projeto ou um unico arquivo? \nExemplo:\n"D:\\Downloads\\python\\bot\\" para um projeto\n"D:\\Downloads\\python\\bot\\funcoes.py" para um arquivo unico')
 func.linha()
 x = int(input('Digite 1 ou 2 respectivamente. '))
 while x != 1 and x != 2:
@@ -18,10 +18,13 @@ if x == 1:
     nomes = []
     erros = []
     projeto = str(input("Digite o caminho do projeto: ")) # adquire o caminho do projeto
-
+    try:
+        arquivos = func.fila(arquivos, projeto, extensao) # cria a fila de arquivos a serem analisados
+        nomes = func.filaNome(nomes, projeto, extensao)   # mesma coisa que o de cima, mas sem o caminho, so o nome do arquivo
+    except Exception as e:
+        print('[ERROR] Erro ao carregar projeto')
+        exit()
     total = func.criarDic(total=True)
-    arquivos = func.fila(arquivos, projeto, extensao) # cria a fila de arquivos a serem analisados
-    nomes = func.filaNome(nomes, projeto, extensao)   # mesma coisa que o de cima, mas sem o caminho, so o nome do arquivo
     for arquivo in arquivos:               # arquivos = lista de arquivos .py em um projeto
         func.linha()
         print(f'[+] {arquivo}')
@@ -55,7 +58,11 @@ if x == 1:
 
 elif x == 2:
     arquivo = Path(str(input(f'Digite o caminho do arquivo (com {extensao}): ')))
-    abrirarquivo = open(f'{arquivo}', 'r', encoding='utf8')
+    try:
+        abrirarquivo = open(f'{arquivo}', 'r', encoding='utf8')
+    except Exception as e:
+        print(f'[ERROR] Erro ao abrir arquivo.\n{e}')
+        exit()
     elementos = func.logica(alvos=func.criarDic(), arquivo=abrirarquivo)
     abrirarquivo.close()
     func.linha()

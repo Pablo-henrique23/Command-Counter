@@ -79,12 +79,17 @@ def logica(alvos:dict, arquivo:TextIOWrapper):
         for palavra in alvos.keys():
             if palavra in linha.replace(':','').split() and (len(aspasDuplas) == 0 and len(aspasSimples) == 0):
                 if linha.find('#') == -1:
+                    # sem comentarios na linha
                     alvos[palavra] += linha.replace(':','').split().count(palavra)
                 elif palavra == '#' and linha.find('#') != -1:
-                    alvos[palavra] += linha.replace(':','').split().count(palavra)
+                    #alvos[palavra] += linha.replace(':','').split().count(palavra)
+                    # nao ha necessidade de .count(), dado que 1 # ja torna a linha toda um comentario
+                    alvos[palavra] += 1
                 else:
-                    if linha.find(palavra) < linha.find('#'):
+                    if linha.find('#') != -1 and linha.find(palavra) < linha.find('#'):
+                        linha = linha[:linha.find('#')]
                         alvos[palavra] += linha.replace(':','').split().count(palavra)
+
     return alvos
 
 def somarAoTotal(inical:dict,total:dict):
